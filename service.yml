@@ -1,0 +1,10 @@
+---
+ - name: "This is service module"
+   hosts: all
+   tasks:
+   - name: copy sshd config file
+     copy: src=/etc/ssh/sshd_config dest=/etc/ssh/
+     notify: restart sshd service
+   handlers:
+   - name: restart sshd service
+     service: name=sshd state=restarted
