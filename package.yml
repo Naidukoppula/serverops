@@ -1,0 +1,27 @@
+---
+ - name: install multiple packages
+   hosts: all
+   tasks:
+    - name: install httpd package
+      yum: name=httpd state=present
+      tags: httpd
+    - name: install vsftpd package
+      yum: name=httpd state=present
+      tags: vsftpd
+    - name: install ftp package
+      yum: name=ftp state=present
+      tags: ftp
+    - name: install samaba package
+      yum: name=samba state=present
+      tags: samba
+    - name: install telnet package
+      yum: name=telnet state=present
+      tags: telnet
+    - name: install ntp package
+      yum: name=ntp state=present
+      tags: ntp
+    - name: install rsyslog package
+      yum: name=rsyslog stste=present
+      tags: rsyslog
+	  
+[A[A[C[C[C[C[C[C[C[C[C[C[C[C
