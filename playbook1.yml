@@ -1,0 +1,18 @@
+---
+ - name: executing filted task using tasks
+   hosts: all
+   tasks:
+   - name: server kernel
+     tags: ker
+     command: uname -a
+     register: kernel
+   - debug: var=kernel.stdout
+   - name: serverdate
+     tags: time
+     command: date
+   - debug: var=date.stdout
+   - name: server uptime
+     tags: ups
+     command: uptime
+     register: up
+   - debug: var=up.stdout
