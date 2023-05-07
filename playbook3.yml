@@ -1,0 +1,10 @@
+---
+ - name: this is handler lab
+   hosts: all
+   tasks:
+    - name: edit the file
+      copy: src=/etc/ssh/sshd_config dest=/etc/ssh/
+      register: edit
+    - name: restart sshd
+      action: service name=sshd state=restarted
+      when: edit.changed
