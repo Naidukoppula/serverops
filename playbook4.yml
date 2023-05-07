@@ -1,0 +1,12 @@
+---
+ - name: install packages
+   hosts: all
+   tasks:
+    - name: install httpd
+      yum: name=httpd state=present
+      notify: edit the file
+   handlers:
+    - name: edit the file
+      copy: src=index.html dest=/var/www/html/
+    - name: service start and enabled
+      service: name=httpd state=restarted enabled=yes
