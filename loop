@@ -1,0 +1,11 @@
+---
+ - name: multiple file creation
+   hosts: all
+   tasks:
+    - name: file creation files
+      command: touch /tmp/"{{item}}"
+      with_items:
+        - file6
+        - file7
+        - file8
+        - file9
