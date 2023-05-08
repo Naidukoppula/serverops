@@ -1,0 +1,9 @@
+---
+ - name: facts display
+   hosts: all
+   tasks:
+    - name: display all the fact varibles
+      debug:
+       msg:
+            my hostname is{{ansible_hostname}}
+            Ip adress is{{ansible_facts['fqdn']}}
