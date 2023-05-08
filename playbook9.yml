@@ -1,0 +1,8 @@
+---
+ - name: usage of debug module
+   hosts: all
+   tasks:
+    - name: printing ip adress
+      debug:
+        msg: "my ip adress of server:{{ansible_default_ipv4.adress}}"
+        verbosity: 0
