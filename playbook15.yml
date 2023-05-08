@@ -1,0 +1,5 @@
+---
+ - hosts: all
+   tasks:
+      - name: display below message
+        debug: msg="welcome to varains"
